@@ -1,21 +1,34 @@
 LOCAL_PATH:= $(call my-dir)
 
+ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
+  ARCH_FOLDER := armv7
+endif
+ifeq ($(TARGET_ARCH_ABI),arm64-v8a)
+  ARCH_FOLDER := aarch64
+endif
+ifeq ($(TARGET_ARCH_ABI),x86)
+  ARCH_FOLDER := i686
+endif
+ifeq ($(TARGET_ARCH_ABI),x86_64)
+  ARCH_FOLDER := x86_64
+endif
+
 include $(CLEAR_VARS)
 LOCAL_MODULE    := icuuc
-LOCAL_SRC_FILES += $(SWIFT_LIB)/android/libscuuc.so
-LOCAL_EXPORT_C_INCLUDES += $(SWIFT_LIB)
+LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift/android/$(ARCH_FOLDER)/libicuucswift.so
+LOCAL_EXPORT_C_INCLUDES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := icudata
-LOCAL_SRC_FILES += $(SWIFT_LIB)/android/libscudata.so
-LOCAL_EXPORT_C_INCLUDES += $(SWIFT_LIB)
+LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift/android/$(ARCH_FOLDER)/libicudataswift.so
+LOCAL_EXPORT_C_INCLUDES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := icui18n
-LOCAL_SRC_FILES += $(SWIFT_LIB)/android/libscui18n.so
-LOCAL_EXPORT_C_INCLUDES += $(SWIFT_LIB)
+LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift/android/$(ARCH_FOLDER)/libicui18nswift.so
+LOCAL_EXPORT_C_INCLUDES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)

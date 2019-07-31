@@ -14,7 +14,7 @@ pushd "$(realpath $(dirname $0))"
     cp sqlite-amalgamation/*.h ../include
 
     # remove all icu so because they are system
-    rm -rf ../libs/armeabi-v7a/libscu*.so
+    rm -rf ../libs/*/libicu*.so
 
     rm -rf sqlite-amalgamation.zip
     rm -rf sqlite-amalgamation
