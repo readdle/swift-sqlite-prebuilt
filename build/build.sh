@@ -1,13 +1,17 @@
 #!/bin/bash
 
+year=2019
+version=3280000
+
 pushd "$(realpath $(dirname $0))"
     mkdir -p ../libs
     mkdir -p ../include
 
-    curl -o sqlite-amalgamation.zip https://www.sqlite.org/2016/sqlite-amalgamation-3140200.zip
+
+    curl -o sqlite-amalgamation.zip https://sqlite.org/$year/sqlite-amalgamation-$version.zip
     unzip sqlite-amalgamation.zip -d ./
 
-    mv sqlite-amalgamation-3140200 sqlite-amalgamation
+    mv sqlite-amalgamation-$version sqlite-amalgamation
 
     NDK_LIBS_OUT="../libs" ndk-build "$@"
 
