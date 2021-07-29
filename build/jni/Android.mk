@@ -15,20 +15,20 @@ endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := icuuc
-LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift/android/$(ARCH_FOLDER)/libicuucswift.so
+LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift-$(ARCH_FOLDER)/android/libicuucswift.so
 LOCAL_EXPORT_C_INCLUDES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := icudata
-LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift/android/$(ARCH_FOLDER)/libicudataswift.so
+LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift-$(ARCH_FOLDER)/android/libicudataswift.so
 LOCAL_EXPORT_C_INCLUDES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := icui18n
-LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift/android/$(ARCH_FOLDER)/libicui18nswift.so
-LOCAL_EXPORT_C_INCLUDES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift
+LOCAL_SRC_FILES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift-$(ARCH_FOLDER)/android/libicui18nswift.so
+LOCAL_EXPORT_C_INCLUDES += $(SWIFT_ANDROID_HOME)/toolchain/usr/lib/swift-aarch64
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
