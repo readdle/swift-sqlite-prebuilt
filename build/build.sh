@@ -2,8 +2,8 @@
 
 set -ex
 
-year=2019
-version=3300100
+year=2021
+version=3360000
 
 pushd "$(realpath $(dirname $0))"
     mkdir -p ../libs
